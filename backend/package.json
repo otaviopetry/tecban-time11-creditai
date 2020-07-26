@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "author": "team11",
+  "license": "MIT",
+  "scripts": {
+    "dev:server": "nodemon --ignore 'db.json'"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "qs": "^6.9.4",
+    "uuidv4": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
