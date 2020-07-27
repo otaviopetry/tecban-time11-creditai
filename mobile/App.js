@@ -28,7 +28,9 @@ export default function App() {
             const theCode = getParameterByName('code', urlString);
 
             code = theCode;
-        })        
+
+            console.log(code);
+        })
     });
 
     return (

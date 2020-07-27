@@ -220,7 +220,7 @@ const setDeepLinking = async () => {
   }
 
   const body = qs.stringify({
-    'redirectURL': 'mobile://' 
+    'redirectURL': 'mobile://ReturnFromConsent/' 
    });
   
   const result = await axios.put(

@@ -1,15 +1,22 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, StatusBar, Image } from 'react-native';
 
-export default function RunningAlgorithm ({ navigation }) {
+import loaderImg from '../../assets/loader.png';
+
+export default function ReturnFromConsent ({ navigation }) {
+
+    setTimeout(() => {
+        navigation.navigate('Dashboard')
+    }, 4000)
+
     return (
         <View style={styles.container}>
-            <Text>Rodando Algoritmo</Text>
-            <TouchableOpacity onPress={ () => navigation.navigate('Dashboard')} style={styles.nextScreen} >
-                <Text style={styles.nextScreen}> {'->'} </Text>
-            </TouchableOpacity>
 
-            <StatusBar style="auto" backgroundColor="blue" />
+            <Image source={loaderImg} alt="Calculando..." style={styles.loaderImg} />
+
+            <Text style={styles.title}>Carregando as melhores soluções para você...</Text>
+            
+            <StatusBar barStyle="dark-content" backgroundColor="#eaeaea" />
         </View>
     )
 }
@@ -17,12 +24,29 @@ export default function RunningAlgorithm ({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#dadada',
+        backgroundColor: '#7D0C4B',
+        paddingHorizontal: 32,
+        paddingVertical: 40,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    loaderImg: {
+        maxWidth: 150,
+        height: 150,
+        marginBottom: 32
+    },  
+    title: {
+        marginBottom: 64,
+        fontSize: 32,
+        color: '#fff',
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     nextScreen: {
         marginTop: 16,
         fontSize: 24
+    },
+    ctaButton: {
+
     }
 })
